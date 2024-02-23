@@ -10,4 +10,12 @@
     --heart-contour: #000;
     --card-font-size: 18px;
     --heart-red: #FF0000;
+    --background-image: repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+    --background-color-blocks: #fff;
+    --border-blocks: #000;
+    --stroke-label: #fff;
+    --color-label: #000;
+    --text-like: #fff;
 }

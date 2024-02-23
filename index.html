@@ -58,12 +58,12 @@
           />
         </div>
         <div class="card__opinion">
-          <p class="description__card">
+          <p>
             Это было самое начало пути. На этом этапе важно было проникнуться
             основами и настроиться на учёбу. И, возможно, подумать, как новые
             знания могут повлиять на ваше будущее.
           </p>
-          <p class="description__opinion">
+          <p>
             Место для ваших воспоминаний о начале обучения.
           </p>
         </div>
@@ -111,7 +111,7 @@
         <div class="image__card">
           <span class="label">&lt;/HTML&gt;</span>
           <img
-            class="image"
+            class="image filter_two"
             src="./images/image.png"
             alt="Изображение дома на колесах"
           />
@@ -172,7 +172,7 @@
         <div class="image__card">
           <span class="label">&lt;CSS&gt;</span>
           <img
-            class="image"
+            class="image filter_three"
             src="./images/image.png"
             alt="Изображение дома на колесах"
           />
@@ -205,9 +205,9 @@
                 />
 
                 <path
-                  class="contour"
-                  d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z"
-                  fill="black"
+                  class="main-body"
+                  d="M12 9H9V12H12V9ZM15 12H12V15H15V12ZM18 9H15V12H18V9ZM12 15H9V18H12V15ZM15 15H12V18H15V15ZM15 18H12V21H15V18ZM18 12H15V15H18V12ZM18 21H15V24H18V21ZM18 18H15V21H18V18ZM27 9H30V12H27V9ZM24 9H27V12H24V9ZM27 12H30V15H27V12ZM24 12H27V15H24V12ZM21 9H24V12H21V9ZM27 15H30V18H27V15ZM24 15H27V18H24V15ZM24 18H27V21H24V18ZM21 12H24V15H21V12ZM21 21H24V24H21V21ZM21 18H24V21H21V18ZM21 21H18V24H21V21ZM21 24H18V27H21V24Z"
+                  fill="none"
                 />
                 <path
                   class="main-body"
@@ -237,7 +237,7 @@
         <div class="image__card">
           <span class="label">&lt;desigions&gt;</span>
           <img
-            class="image"
+            class="image filter_four"
             src="./images/image.png"
             alt="Изображение дома на колесах"
           />
@@ -298,7 +298,7 @@
         <div class="image__card">
           <span class="label">care</span>
           <img
-            class="image"
+            class="image filter_five"
             src="./images/image.png"
             alt="Изображение дома на колесах"
           />
@@ -360,7 +360,7 @@
         <div class="image__card">
           <span class="label">&lt;support&gt;</span>
           <img
-            class="image"
+            class="image filter_six"
             src="./images/image.png"
             alt="Изображение дома на колесах"
           />
@@ -419,7 +419,7 @@
         <div class="image__card">
           <span class="label">&lt;lifes-style: none;&gt;</span>
           <img
-            class="image"
+            class="image filter_seven"
             src="./images/image.png"
             alt="Изображение дома на колесах"
           />
@@ -480,7 +480,7 @@
         <div class="image__card">
           <span class="label">&lt;experience&gt;</span>
           <img
-            class="image"
+            class="image filter_eight"
             src="./images/image.png"
             alt="Изображение дома на колесах"
           />
@@ -540,32 +540,35 @@
       </section>
     </main>
     <footer class="footer">
-      <div>
+      <div class="button__all">
         <button
           class="button__save"
           type="button"
-          onclick="window['dialog__id'].show()"
+          onclick="window['dialog__id'].showModal()"
+          aria-controls="dialog__id"
         >
-          <svg class="dialog__icon" viewBox="0 0 28 28">
-            <use href="/svg/floppy.svg" />
+          <svg viewBox="0 0 21 21" width="21" height="21" class="floppy__main">
+            <use href="/svg/floppy.svg#floppy" />
           </svg>
-          Сохранить на память
+          <span class="button__text_last">Сохранить на память</span>
         </button>
       </div>
     </footer>
     <dialog class="dialog" id="dialog__id">
       <div class="dialog__content">
-        <div>
-          <svg class="dialog__icon" viewBox="0 0 28 28">
-            <use href="/svg/floppy.svg" />
-          </svg>
-          <p class="dialog__description">Вставьте дискету, чтобы продолжить</p>
-        </div>
-        <div class="dialog__content">
-          <form method="dialog">
-            <button class="dialog__ok">ОК</button>
-          </form>
-        </div>
+        <svg class="floppy__dialog" viewBox="0 0 21 21" width="39" height="39">
+          <use href="/svg/floppy.svg#floppy" />
+        </svg>
+        <span class="dialog__description"
+          >Вставьте дискету, чтобы продолжить</span
+        >
+      </div>
+      <div class="dialog__button">
+        <form method="dialog">
+          <button class="dialog__ok">
+            <span class="button__ok">ОК</span>
+          </button>
+        </form>
       </div>
     </dialog>
     <script src="./scripts/like.js"></script>
