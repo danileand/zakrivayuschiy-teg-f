@@ -14,11 +14,7 @@
 */
 
 .sparks {
-    opacity: 0;
-  }
-
-.card__icon-button:focus-visible {
-  border: 2px solid #000;
+  opacity: 0;
 }
 
 .heart .core {
@@ -41,7 +37,7 @@
 
 .like-icon:hover .core {
   fill: var(--heart-contour);
-  transition: fill 0.3s linear 0.03s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
@@ -51,7 +47,7 @@
 
 .heart:active .core {
   fill: var(--heart-red);
-  transition: fill 0.3s linear 0.03s;
+  transition: fill 0.3s linear;
 }
 
 .heart:active .main-body {
@@ -67,18 +63,23 @@
   fill: var(--heart-red);
 }
 
+.like-icon .contour {
+  fill: var(--heart-contour);
+  transition: fill 0.1s linear;
+}
+
 .like-icon.is-liked .contour {
   fill: var(--heart-red);
   transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {
-  animation: bigHeart 0.3s ease-in 0.1s;
+  animation: bigHeart 0.3s ease-in 0.1s 2 alternate;
   transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s 1 alternate;
+  animation: sparks 0.3s ease-in 0.3s 2 alternate;
 }
 
 @keyframes sparks {
@@ -114,12 +115,11 @@
 }
 
 @keyframes button {
-    from {
-      transform: translateX(0%);
-    }
-  
-    to {
-      transform: translateX(40%);
-    }
+  from {
+    transform: translateX(0%);
   }
 
+  to {
+    transform: translateX(40%);
+  }
+}
