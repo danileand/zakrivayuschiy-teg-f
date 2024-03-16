@@ -68,7 +68,7 @@
   line-height: 14px;
   position: relative;
   cursor: pointer;
-  transition: opasity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:hover {
@@ -86,20 +86,16 @@
 
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
-  width: 100%;
 }
 
 .theme-menu__button::after {
   content: "";
   display: block;
-  position: absolute;
   height: 2px;
   background-color: var(--border-blocks);
   transition: transform 0.3s ease;
   transform-origin: left;
-  width: 0%;
   bottom: -3px;
-  left: 6px;
   transform: scaleX(0);
 }
 
@@ -142,12 +138,12 @@
 
 .header__card {
   font-size: var(--card-font-size);
-  font-weight: var(--accent-font-weight);
   line-height: 21.78px;
   padding-left: 7px;
   padding-top: 5px;
   padding-bottom: 3px;
   border-bottom: 2px solid var(--border-blocks);
+  font-variation-settings: "wght" var(--accent-font-weight);
 }
 
 .card__opinion {
@@ -203,6 +199,19 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  padding: 0;
+  transition: outline 0.3s ease;
+  outline: 2px solid transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--color-label);
+  outline-offset: -2px;
 }
 
 .icon-heart__container {
@@ -210,6 +219,7 @@
   justify-content: end;
   padding-right: 23px;
   padding-bottom: 25px;
+  gap: 5px;
 }
 
 .card__like-button {
@@ -239,7 +249,11 @@
   position: relative;
   cursor: pointer;
   outline: none;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+.button__all-options:focus {
+  outline: none;
 }
 
 .button__all-options:focus-visible {
@@ -265,18 +279,12 @@
 
 .button__text {
   font-family: var(--accent-font), fantasy;
-  text-transform: capitalize;
   color: var(--text-like);
   mix-blend-mode: difference;
 }
 
 .like-icon {
   margin-top: 2px;
-}
-
-.card__icon-button:focus-visible {
-  border: 2px solid #000;
-  outline: none;
 }
 
 .button__all {
@@ -309,7 +317,8 @@
   font-size: 14px;
   line-height: 21px;
   font-weight: var(--main-font-weight);
-  min-width: 357px;
+  min-inline-size: 357px;
+  overflow: hidden;
 }
 
 .dialog::backdrop {
@@ -328,6 +337,7 @@ dialog[open] {
   justify-content: center;
   gap: 20px;
   padding-bottom: 30px;
+  min-inline-size: 293px;
 }
 
 .dialog__button {
@@ -340,8 +350,31 @@ dialog[open] {
   background-color: transparent;
   padding-top: 12.5px;
   padding-bottom: 12.5px;
-  min-width: 293px;
+  min-inline-size: 293px;
   cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+.dialog__ok:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--border-blocks);
+}
+
+.dialog__ok::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--border-blocks);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.dialog__ok:hover::before {
+  transform: scaleX(1);
 }
 
 .dialog__description {
@@ -404,5 +437,39 @@ dialog[open] {
   .label {
     inset-inline-end: 10px;
     inset-block-start: 25px;
+  }
+
+  .button__save {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-height: 84px;
+    width: 306px;
+  }
+
+  .floppy__main {
+    min-width: 28px;
+    min-height: 28px;
+  }
+
+  dialog[open] {
+    padding: 30px 42px;
+  }
+
+  .dialog {
+    min-inline-size: 341px;
+  }
+
+  .dialog__ok {
+    min-inline-size: 257px;
+  }
+
+  .dialog__content {
+    min-inline-size: 257px;
+  }
+
+  .dialog__description {
+    min-inline-size: 198px;
   }
 }
