@@ -281,6 +281,7 @@
   font-family: var(--accent-font), fantasy;
   color: var(--text-like);
   mix-blend-mode: difference;
+  font-size: var(--button-font);
 }
 
 .like-icon {
@@ -291,11 +292,6 @@
   display: flex;
   justify-content: center;
   margin-bottom: 103px;
-}
-
-.button__text_last {
-  color: var(--text-like);
-  mix-blend-mode: difference;
 }
 
 .floppy__main {
@@ -318,7 +314,6 @@
   line-height: 21px;
   font-weight: var(--main-font-weight);
   min-inline-size: 357px;
-  overflow: hidden;
 }
 
 .dialog::backdrop {
@@ -354,27 +349,7 @@ dialog[open] {
   cursor: pointer;
   outline: none;
   position: relative;
-}
-
-.dialog__ok:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--border-blocks);
-}
-
-.dialog__ok::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--border-blocks);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-}
-
-.dialog__ok:hover::before {
-  transform: scaleX(1);
+  text-transform: uppercase;
 }
 
 .dialog__description {
@@ -430,10 +405,6 @@ dialog[open] {
     width: 100%;
   }
 
-  .card__opinion {
-    min-height: 216px;
-  }
-
   .label {
     inset-inline-end: 10px;
     inset-block-start: 25px;
@@ -454,7 +425,7 @@ dialog[open] {
   }
 
   dialog[open] {
-    padding: 30px 42px;
+    padding: 30px 40px;
   }
 
   .dialog {
